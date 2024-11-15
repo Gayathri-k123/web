@@ -1,0 +1,43 @@
+	h1{
+	color:blue;
+	background-color:yellow;
+		
+	}
+	h2{
+	
+		color:red;
+		background-color:blue;
+		}
+	p{
+		
+		color:green;
+		padding:10px;
+		background-color:yellow;
+	
+	
+	}
+	.id-selector{
+		color:red;
+		background-color:black;
+
+
+	}
+	.class-selector{
+		color:orange;
+		background-color:darkgrey;
+		padding:10px;
+		border-radius:10px;
+		
+	
+	
+	}
+	#unique-id{
+		color:purple;
+		background-color:lightblue;
+		}
+	
+	
+	
+	
+  
+

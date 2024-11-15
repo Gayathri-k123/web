@@ -1,0 +1,49 @@
+<html>
+<head>
+<title>background color</title>
+<style>
+	body{
+		font-family:sans-serif;
+		display:flex;
+		justify-content:center;
+		align-items:center;
+		}
+	button{
+		padding:10px 20px;
+		font-size:16px;
+		margin:10px;
+		}
+	img{
+	
+		width:200px;
+	}
+	</style>	
+<body>
+	<img id="lightbulb" src="off.jpeg" alt="light bulb">
+	
+	<div>
+		<button id="button1" onclick="turnon()">TURNON</button>
+		<button id="button2" onclick="turnoff()">TURNOFF</button>
+	</div>
+	<script>
+	
+	function turnon()
+	{
+	document.getElementById("lightbulb").src="on.jpeg";
+	}
+	function turnoff()
+	{
+	document.getElementById("lightbulb").src="off.jpeg";
+	}
+	
+        </script>
+        </body>
+        </html>
+	
+	
+	
+	
+	
+	
+	
+	
