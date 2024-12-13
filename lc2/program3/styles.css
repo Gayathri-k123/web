@@ -1,0 +1,25 @@
+body{
+	font-family:sans-serif;
+}
+#mytable{
+	width:100%;
+	border-collapse:collapse;
+}
+#mytable th{
+	padding-top:20px;
+	padding-bottom:20px;
+	text-align:left;
+	color:white;
+	background-color:#b22222;
+	border:1px solid grey;
+}
+#mytable td{
+	padding:8px;
+	border:1px solid grey;
+}
+.even-row{
+	background-color:#f2f2f2;
+}
+#mytable tr:hover{
+	background-color:burlywood;
+}
