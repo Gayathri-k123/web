@@ -1,0 +1,239 @@
+<html>
+	<head>
+    		<title>Form Validation</title>
+	</head>
+	<body>
+		<center>
+		<h3>STUDENT REGISTRATION FORM</h3>
+		Using asterisks(<font color='red'>*</font>) for required fiels.
+		<table border=1 width=40% cellpadding=10>
+		    <form id="myForm">
+		        <tr>
+		            <td>FIRST NAME<font color='red'>*</font></td>
+		            <td><input type="text" id="name">&nbsp;(max 30 characters)</td>
+		        </tr>
+
+		        <tr>
+		            <td>LAST NAME<font color='red'>*</font></td>
+		            <td><input  type="text" id="name2">&nbsp;(max 30 characters)</td>
+		        </tr>
+
+		        <tr>
+		            <td>DATE OF BIRTH</td>
+		            <td><select><option>Day:</option></select>&nbsp;<select><option>Month:</option></select>&nbsp;<select><option>Year:</option></select></td>
+		        </tr>
+
+		        <tr>
+		            <td>EMAIL ID<font color='red'>*</font></td>
+		            <td><input type="email" id="email"></td>
+		        </tr>
+		        <tr>
+		            <td>MOBILE NUMBER<font color='red'>*</font></td>
+		            <td><input type="text" id="phone">&nbsp;(10 digit number)</td>
+		        </tr>
+		        <tr>
+		            <td>GENDER</td>
+		            <td><input type="radio">Male<input type="radio">Female</td>
+		        </tr>
+		        <tr>
+		            <td>ADDRESS</td>
+		            <td><input type="textarea"></td>
+		        </tr>
+		        <tr>
+		            <td>CITY</td>
+		            <td><input type="text">&nbsp;(max 30 characters)</td>
+		        </tr>
+		        <tr>
+		            <td>PINCODE</td>
+		            <td><input type="text">&nbsp;(max 6 characters)</td>
+		        </tr>
+		        <tr>
+		            <td>STATE</td>
+		            <td><input type="text">&nbsp;(max 30 characters)</td>
+		        </tr>
+		        <tr>
+		            <td>COUNTRY</td>
+		            <td><input type="text">&nbsp;(max 30 characters)</td>
+		        </tr>
+
+		        <tr>
+		            <td>HOBBIES</td>
+		            <td>Drawing<input type="checkbox"> Singng<input type="checkbox"> Dancing<input type="checkbox"> Sketching<input type="checkbox">                        
+		            <br>Others<input type="checkbox"><input type="text"></td>
+		        </tr>
+
+		        <tr>
+		            <td>QUALIFICATION</td>
+		            <td>
+		                <table>
+		                    <tr>
+		                        <th>SL.NO.</th>
+		                        <th>Examination</th>
+		                        <th>Board</th>
+		                        <th>Percentage</th>
+		                        <th>Year of Passing</th>
+		                    </tr>
+		                    <tr>
+		                        <td>1</td>
+		                        <td>Class X</td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                    </tr>
+
+		                    <tr>
+		                        <td>2</td>
+		                        <td>Class XII</td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                    </tr>
+
+		                    <tr>
+		                        <td>3</td>
+		                        <td>Graduation</td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                    </tr>
+
+		                    <tr>
+		                        <td>4</td>
+		                        <td>Masters</td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                        <td><input type="text"></td>
+		                    </tr>
+		                    <tr>
+		                        <td></td>
+		                        <td></td>
+		                        <td><center>(10 char max)</center</td>
+		                        <td><center>(upto 2 decimal)</center></td>
+		                        <td></td>
+		                    </tr>
+		                </table>
+		            </td>
+		        </tr>
+
+		        <tr>
+		            <td>COURSES<br>APPLIED FOR</td>
+		            <td>MCA<input type="radio">M.TECH<input type="radio">M.Sc<input type="radio">Ph.D<input type="radio"></td>
+		        </tr>
+
+		        <tr>
+		            <td>TYPE YOUR PASSWORD</td>
+		            <td><input type="password">&nbsp;(max 30 characters)</td>
+		        </tr>
+
+		        <tr>
+		            <td>UPLOAD YOUR PHOTO</td>
+		            <td><input type="file"></td>
+		        </tr>
+
+		        <tr>
+		            <td>DATE OF TC</td>
+		            <td><input type="date"></td>
+		        </tr>
+
+		        <tr  >
+		            <td colspan="2"><center><input type="submit" onclick="validateForm()">&nbsp;<input type="submit" value="Reset"></center></td>
+		        </tr>
+		</form>
+	</table>
+	</center>
+	<script>
+		function checkEmptyFields() 
+		{
+		    const name = document.getElementById('name').value.trim();
+		    const name2 = document.getElementById('name2').value.trim();
+		    const email = document.getElementById('email').value.trim();
+		    const phone = document.getElementById('phone').value.trim();
+		    return name === '' || email === '' || phone === '' || name2 === '';
+		}
+
+		function verifyEmail(email) 
+		{
+		    const atPosition = email.indexOf("@");
+		    const dotPosition = email.lastIndexOf(".");
+		    if (atPosition < 1 || dotPosition < atPosition + 2 || dotPosition + 2 >= email.length) 
+		    {
+		        return false;
+		    }
+		    return true;
+		}
+
+		function verifyName(name) {
+			if( name.length < 1)
+			    {
+				return false;
+			    }
+			    for (let i=0;i<name.length;i++)
+			    {
+			    if(!isNaN(name[i]) && name[i]!=='')
+			    {
+			     return false;
+			    }
+			    }
+			   return true;
+			}
+
+		function verifylastName(name2) {
+
+		   if( name.length < 1)
+		    {
+			return false;
+		    }
+		    for (let i=0;i<name2.length;i++)
+		    {
+		    if(!isNaN(name2[i]) && name2[i]!=='')
+		    {
+		     return false;
+		    }
+		    }
+		   return true;
+		}
+
+		function verifyPhone(phone) 
+		{
+		    if (phone.length !== 10 || isNaN(phone)) 
+		    {
+		        return false;
+		    }
+		    return true;
+		}
+
+		function validateForm()
+		{
+		    const email = document.getElementById('email').value.trim();
+		    const name = document.getElementById('name').value.trim();
+		    const name2 = document.getElementById('name2').value.trim();
+		    const phone = document.getElementById('phone').value.trim();
+
+		    if (checkEmptyFields()) 
+		    {
+		        alert('Please fill in all required fields.');
+		    } 
+		    else if (!verifyEmail(email)) 
+		    {
+		        alert("Please enter a valid email address. ");
+		    } 
+		    else if (!verifyName(name)) 
+		    {
+		        alert('Please enter a valid name. The first name should not include a number.');
+		    } 
+		    else if (!verifyName(name2)) 
+		    {
+		        alert('Please enter a valid name. The last name should not include a number.');
+		    }
+		    else if (!verifyPhone(phone)) 
+		    {
+		        alert('Please enter a valid phone number. The number should be numeric and must be 10 digits long.');
+		    } 
+		    else 
+		    {
+		        alert('Form submitted successfully');
+		    }
+		}
+	</script>
+</body>
+</html>
