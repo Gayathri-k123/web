@@ -1,0 +1,35 @@
+<html>
+<head>
+	<title>Background Color Changer</title>
+	<style>
+		body
+		{
+			font-family:sans-serif;
+			display:flex;
+			justify-content:center;
+			align-items:center;
+		}
+		button
+		{
+			padding:10px 20px;
+			font-size:16px;
+		}
+	</style>
+</head>
+<body>
+	<button id="changecolor">Change Background Color</button>
+	<script>
+		function changetored()
+		{
+			document.body.style.backgroundColor="red";
+		}
+		function changetogreen()
+		{
+			document.body.style.backgroundColor="green";
+		}
+		const button=document.getElementById('changecolor');
+		button.addEventListener('click',changetored);
+		button.addEventListener('dblclick',changetogreen);
+	</script>
+</body>
+</html>
